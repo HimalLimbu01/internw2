@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details Table</title>
+    <link rel="stylesheet" href="pagee.css">
+</head>
+<body>
+    <h1>Details Table</h1>
+    
+    <form id="detailsForm">
+        <input type="text" id="level" placeholder="Level" required>
+        <input type="text" id="university" placeholder="University" required>
+        <input type="text" id="address" placeholder="Address" required>
+        <input type="text" id="board" placeholder="Board" required>
+        <input type="number" id="gpa" placeholder="GPA" step="0.01" required>
+        <input type="number" id="passedYear" placeholder="Passed Year" required>
+        <button type="submit">Add</button>
+    </form>
+
+    <table id="detailsTable">
+        <thead>
+            <tr>
+                <th>Level</th>
+                <th>University</th>
+                <th>Address</th>
+                <th>Board</th>
+                <th>GPA</th>
+                <th>Passed Year</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Rows will be added here dynamically -->
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
