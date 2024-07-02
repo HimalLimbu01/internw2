@@ -9,10 +9,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const university = document.getElementById('university').value;
         const address = document.getElementById('address').value;
         const board = document.getElementById('board').value;
-        const gpa = document.getElementById('gpa').value;
+        const gpa = parseFloat(document.getElementById('gpa').value);
         const passedYear = document.getElementById('passedYear').value;
 
         if (level && university && address && board && gpa && passedYear) {
+            if (gpa > 4.0) {
+                alert('GPA cannot be greater than 4.0');
+                return;
+            }
             addRow(level, university, address, board, gpa, passedYear);
             form.reset();
         } else {
@@ -27,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <td>${university}</td>
             <td>${address}</td>
             <td>${board}</td>
-            <td>${gpa}</td>
+            <td>${gpa.toFixed(2)}</td>
             <td>${passedYear}</td>
             <td>
                 <button class="edit">Edit</button>
@@ -48,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const university = row.cells[1].innerText;
         const address = row.cells[2].innerText;
         const board = row.cells[3].innerText;
-        const gpa = row.cells[4].innerText;
+        const gpa = parseFloat(row.cells[4].innerText);
         const passedYear = row.cells[5].innerText;
 
         document.getElementById('level').value = level;
@@ -62,11 +66,17 @@ document.addEventListener('DOMContentLoaded', () => {
         form.addEventListener('submit', function onUpdate(event) {
             event.preventDefault();
 
+            const newGpa = parseFloat(document.getElementById('gpa').value);
+            if (newGpa > 4.0) {
+                alert('GPA cannot be greater than 4.0');
+                return;
+            }
+
             row.cells[0].innerText = document.getElementById('level').value;
             row.cells[1].innerText = document.getElementById('university').value;
             row.cells[2].innerText = document.getElementById('address').value;
             row.cells[3].innerText = document.getElementById('board').value;
-            row.cells[4].innerText = document.getElementById('gpa').value;
+            row.cells[4].innerText = newGpa.toFixed(2);
             row.cells[5].innerText = document.getElementById('passedYear').value;
 
             form.reset();
@@ -82,10 +92,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const university = document.getElementById('university').value;
         const address = document.getElementById('address').value;
         const board = document.getElementById('board').value;
-        const gpa = document.getElementById('gpa').value;
+        const gpa = parseFloat(document.getElementById('gpa').value);
         const passedYear = document.getElementById('passedYear').value;
 
         if (level && university && address && board && gpa && passedYear) {
+            if (gpa > 4.0) {
+                alert('GPA cannot be greater than 4.0');
+                return;
+            }
             addRow(level, university, address, board, gpa, passedYear);
             form.reset();
         } else {
