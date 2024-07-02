@@ -23,7 +23,7 @@ input[type="number"] {
     margin: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    width: calc(33% - 22px); /* Adjusted for padding and margin */
+    width: calc(33% - 22px); 
     box-sizing: border-box;
 }
 
